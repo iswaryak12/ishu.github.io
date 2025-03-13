@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLink</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="loginPage">
+        <h2>Login Page</h2>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">Login</button>
+        </form>
+    </div>
+
+    <!-- Personal Details Form -->
+    <div id="personalDetails" style="display:none;">
+        <h2>Personal Details</h2>
+        <form id="personalDetailsForm" onsubmit="return submitPersonalDetails(event)">
+            <label>Full Name:</label>
+            <input type="text" name="fullname" required><br><br>
+
+            <label>Age:</label>
+            <input type="number" name="age" required><br><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other<br><br>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" required><br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+
+            <label>Employment Status:</label>
+            <input type="radio" name="status" value="Employed"> Employed
+            <input type="radio" name="status" value="Unemployed"> Unemployed
+            <input type="radio" name="status" value="Recruiter"> Recruiter<br><br>
+
+            <label>Qualification:</label>
+            <input type="text" name="qualification" required><br><br>
+
+            <label>Health Disorder:</label>
+            <input type="radio" name="healthDisorder" value="Yes"> Yes
+            <input type="radio" name="healthDisorder" value="No"> No<br><br>
+
+            <label>Type of Health Disorder:</label>
+            <input type="text" name="disorderType"><br><br>
+
+            <label>Skills:</label>
+            <input type="text" name="skills" required><br><br>
+
+            <label>Domain of Interest in Collaborating:</label>
+            <input type="text" name="domain" required><br><br>
+
+            <label>Language:</label>
+            <input type="text" name="language" required><br><br>
+
+            <label>Nationality:</label>
+            <input type="text" name="nationality" required><br><br>
+
+            <label>State:</label>
+            <input type="text" name="state" required><br><br>
+
+            <button type="submit" style="background-color: #2196F3; color: white; border: none; padding: 10px 20px; cursor: pointer;">Submit</button>
+        </form>
+    </div>
+
+    <!-- Homepage -->
+    <div id="homePage" style="display:none;">
+        <div class="header">
+            <div class="left-corner">&#9776; Menu
+                <div class="options">
+                    <div class="option" onclick="showAgriculturePage()">Agriculture</div>
+                    <div class="option" onclick="showHealthPage()">Health</div>
+                    <div class="option" onclick="showEducationPage()">Education</div>
+                    <div class="option" onclick="showJobsPage()">Jobs</div>
+                </div>
+            </div>
+            <div class="right-corner">
+                <div class="profile"><a href="*" style="text-decoration: none; color:white">Your Account</a></div>
+                <div class="settings"><a href="*" style="text-decoration: none; color:white">Settings</a></div>
+                <div class="notification"><a href="*" style="text-decoration: none; color:white">Notifications</a></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="user-info">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone">
+                <label for="language">Language:</label>
+                <input type="text" id="language" name="language">
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="dropdown">
+                <button class="dropbtn">More Options</button>
+                <div class="dropdown-content">
+                    <div>My Activities</div>
+                    <div>My Certifications</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agriculture Page -->
+    <div id="agriculturePage" style="display:none;">
+        <header>
+            <table width="100%">
+                <tr>
+                    <td align="left" width="10%">☰ Menu</td>
+                    <td align="center"><h1>AGRICULTURE</h1></td>
+                    <td width="10%"></td> <!-- Empty cell for spacing -->
+                </tr>
+            </table>
+            <!-- Back Button -->
+            <button class="back-button" onclick="goBackToHomePage()">Back</button>
+        </header>
+
+        <main>
+            <!-- Box for Location and Climate Details -->
+            <div class="location-box">
+                <h2>Location Details</h2>
+                <p><strong>KOVILPATTI</strong></p>
+                <p>Thoothukudi district, Tamil Nadu, India</p>
+                <p>Age: 26</p>
+
+                <h2>Weather Alert</h2>
+                <p><em style="color: red;">Rainfall - 250mm (red alert)</em></p>
+            </div>
+
+            <!-- Box for Market Analysis -->
+            <div class="market-analysis-box">
+                <h3 align="center">MARKET ANALYSIS</h3>
+                <h4 align="center" style="color: red;">CROPS ON DEMAND!!!</h4>
+                
+                <p align="center">RICE, WHEAT, PULSES</p>
+                <p align="center">COTTON, GROUNDNUT, MAIZE</p>
+            </div>
+
+            <!-- Box for RED ALERT -->
+            <div class="red-alert-box">
+                <h2 align="center" style="color: white;">RED ALERT</h2>
+                <p align="center" style="color: white;"><strong>HEAVY RAINFALL TODAY IN YOUR AREA - 250mm</strong></p>
+            </div>
+
+            <!-- 4 Boxes Below RED ALERT -->
+            <div class="four-boxes">
+                <div class="box">
+                    <h3>AI IMG ANALYSIS</h3>
+                    <p>Soil img - Soil health, type, best suited fertilizers and crops</p>
+                </div>
+                <div class="box">
+                    <h3>PLANT DISEASE</h3>
+                    <p>Crop disease, pests, and nutrient deficiency detection and treatment</p>
+                </div>
+                <div class="box">
+                    <h3>GPS-TRACKING</h3>
+                    <p>Satellite view of farm and plant growth analysis</p>
+                </div>
+                <div class="box">
+                    <h3>BUY AND RENT</h3>
+                    <p>Buy and Rent farm machinery and tools, contact dealers</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer (Empty) -->
+        <footer>
+            <!-- No content here -->
+        </footer>
+    </div>
+
+    <!-- Health Care Page -->
+    <div id="healthPage" style="display:none;">
+        <div class="header">
+            <div class="left-corner">☰ Menu</div>
+            <h1>HEALTH CARE</h1>
+            <div></div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="goBackToHomePage()">Back</button>
+
+        <div class="center-box">
+            <h2>28°C OF SUNNY DAY</h2>
+            <p>HAVE PLENTY OF WATER</p>
+        </div>
+
+        <div class="button-container">
+            <button>BPM</button>
+            <button>SPO2</button>
+            <button>WATER LEVEL</button>
+        </div>
+
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>BLOOD SUGAR</h3>
+                <div class="value">80</div>
+                <div class="unit">mg/ml</div>
+                <p>Normal</p>
+            </div>
+            <div class="info-box">
+                <h3>BLOOD PRESSURE</h3>
+                <div class="value">102/72</div>
+                <div class="unit">mmHg</div>
+                <p>Normal</p>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <div class="symbol">🔍</div>
+            <div class="text">ASK AI FOR HEALTH QUERIES</div>
+            <div class="symbol">🎤</div>
+        </div>
+
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>TELEMEDICINE</h3>
+                <p>Consult doctors via video/audio calls and AI chatbot.</p>
+            </div>
+            <div class="info-box">
+                <h3>MENTAL HEALTH</h3>
+                <p>Stress relief, therapy, and support groups.</p>
+            </div>
+        </div>
+
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>PREVENTIVE HEALTHCARE</h3>
+                <p>Vaccination alerts, childcare, and health blogs.</p>
+            </div>
+            <div class="info-box">
+                <h3>MEDICINE AND PHARMACY</h3>
+                <p>Order medicines and get reminders for intake.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Page -->
+    <div id="educationPage" style="display:none;">
+        <div class="header">
+            <div class="left-corner">☰ Menu</div>
+            <h1>EDUCATION</h1>
+            <div></div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="goBackToHomePage()">Back</button>
+
+        <!-- Three Boxes Section -->
+        <div class="three-boxes">
+            <div class="box">
+                <h2>LEARN COURSES</h2>
+            </div>
+            <div class="box">
+                <h2>JOB OR FREELANCE</h2>
+            </div>
+            <div class="box">
+                <h2>CONNECT WITH PEOPLE</h2>
+            </div>
+        </div>
+
+        <!-- Course Process Box -->
+        <div class="course-process-box">
+            <h2>COURSE PROCESS</h2>
+            <div class="course">
+                <p>YIELD INCREASE TECHNIQUES-----80% COMPLETE</p>
+            </div>
+            <div class="course">
+                <p.GREEN REVOLUTION------70% COMPLETE</p>
+            </div>
+            <div class="course">
+                <p>MODERN FARMING TOOLS------50% COMPLETE</p>
+            </div>
+            <div class="course">
+                <p>BEST IRRIGATION PRACTICES------95% COMPLETE</p>
+            </div>
+        </div>
+
+        <!-- Study Remainder Box -->
+        <div class="study-remainder-box">
+            <div class="notification">🔔</div>
+            <h2>STUDY REMAINDER!!!</h2>
+            <select>
+                <option>RESUME COURSES</option>
+                <option>AGRICULTURE BASICS</option>
+                <option>MODERN FARMING</option>
+                <option>CROP MANAGEMENT</option>
+                <option>IRRIGATION TECHNIQUES</option>
+            </select>
+        </div>
+
+        <!-- Alumni Connections Box -->
+        <div class="alumni-connections-box">
+            <h2>YOUR ALUMNI AND PEER CONNECTIONS</h2>
+            <div class="connection">
+                <div class="symbol">👤</div>
+                <div class="username">@agriexpert1</div>
+            </div>
+            <div class="connection">
+                <div class="symbol">👤</div>
+                <div class="username">@farmpro22</div>
+            </div>
+            <div class="connection">
+                <div class="symbol">👤</div>
+                <div class="username">@cropmaster</div>
+            </div>
+            <div class="connection">
+                <div class="symbol">👤</div>
+                <div class="username">@irriguru</div>
+            </div>
+            <select>
+                <option>SHOW MORE</option>
+                <option>View All</option>
+                <option>Recent Connections</option>
+                <option>Active Now</option>
+            </select>
+        </div>
+
+        <!-- Clients Box -->
+        <div class="clients-box">
+            <h2>YOUR CLIENTS</h2>
+            <div class="client">
+                <div class="symbol">👤</div>
+                <div class="username">@client1</div>
+            </div>
+            <div class="client">
+                <div class="symbol">👤</div>
+                <div class="username">@client2</div>
+            </div>
+            <select>
+                <option>SHOW MORE</option>
+                <option>@client3</option>
+                <option>@client4</option>
+                <option>All Clients</option>
+                <option>Recent Clients</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Job Opportunities Page -->
+    <div id="jobsPage" style="display:none;">
+        <div class="header">
+            <div class="left-corner">☰ Menu</div>
+            <h1>JOB OPPORTUNITIES</h1>
+            <div></div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="goBackToHomePage()">Back</button>
+
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="menu-icon">
+                ☰ <span>MENU</span>
+            </div>
+            <h1>JOB OPPORTUNITIES</h1>
+        </div>
+
+        <!-- Profile Box -->
+        <div class="profile-box">
+            <div class="profile-icon">👤</div>
+            <div class="profile-text">
+                <h2>Build your personal Account Profile</h2>
+                <p>build, customize, and elevate your personal brand.</p>
+            </div>
+        </div>
+
+        <!-- Four Boxes Section -->
+        <div class="four-boxes">
+            <div class="box">
+                <h3>UI/UX DESIGN</h3>
+            </div>
+            <div class="box">
+                <h3>DIGITAL MARKETING</h3>
+            </div>
+            <div class="box">
+                <h3>PROJECT MANAGEMENT</h3>
+            </div>
+            <div class="box">
+                <h3>WEB DEVELOPMENT</h3>
+            </div>
+        </div>
+
+        <!-- Two Dark Blue Boxes Section -->
+        <div class="two-boxes">
+            <div class="box">
+                <h3>CONNECT WITH RECRUITERS</h3>
+                <button>CLICK HERE</button>
+            </div>
+            <div class="box">
+                <h3>CONNECT WITH PEOPLE OF ALL DOMAINS</h3>
+                <button>CLICK HERE</button>
+            </div>
+        </div>
+
+        <!-- Recommended Section -->
+        <div class="recommended-section">
+            <h3>RECOMMENDED FOR YOU</h3>
+            <div class="recommendation">
+                <div class="symbol">👤</div>
+                <div class="username">@agriexpert1</div>
+                <div class="call-icon">📞</div>
+                <div class="more-icon">⋮</div>
+            </div>
+            <div class="recommendation">
+                <div class="symbol">👤</div>
+                <div class="username">@farmconnect</div>
+                <div class="call-icon">📞</div>
+                <div class="more-icon">⋮</div>
+            </div>
+            <div class="recommendation">
+                <div class="symbol">👤</div>
+                <div class="username">@cropguru</div>
+                <div class="call-icon">📞</div>
+                <div class="more-icon">⋮</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
